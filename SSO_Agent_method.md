@@ -1,22 +1,14 @@
-
-```mermaid
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>Bob: Hello, world!
-```
-
-
 ```mermaid
 sequenceDiagram
     participant Client
-    participant Server: valid user?
+    participant Server
     participant Agent
     participant IdP
-    Client->>IdP
-    IdP->>Client
-    Server->>Agent
-    Agent->>IdP
-    IdP->>Agent: OK
-    Agent->>Server: OK
+    Client->>IdP: Login
+    IdP->>Client: token
+    Client->>Server: token
+    Server->>Agent: token
+    Agent->>IdP: token
+    IdP->>Agent: user info
+    Agent->>Server: user info
 ```
